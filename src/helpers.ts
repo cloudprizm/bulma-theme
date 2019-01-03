@@ -14,12 +14,14 @@ const resolveNestedHEXColor = (val: string) =>
 export const color = (val: string | string[]) =>
   makeColor(val)
 
-export const toColorString = (val: string) =>
-  isNestedColor(val)
-    ? resolveNestedHEXColor(val)
-    : toHex(val)
+// TODO improve interface for InjectedMethods
+// there is no point to have array of strings
+export const toColorString = (val: string | string[]) =>
+  isNestedColor(val as string)
+    ? resolveNestedHEXColor(val as string)
+    : toHex(val as string)
 
-export const invertColor = (colorString: string) =>
+export const invertColor = (colorString: string | string[]) =>
   color(colorString).luminosity() > 0.55
     ? toColorString('rgba(0, 0, 0, 0.7)')
     : toColorString('#fff')

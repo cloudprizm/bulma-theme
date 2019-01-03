@@ -9,10 +9,13 @@ export const resolvers: InjectedMethods = {
 }
 export type RunnableTheme = Reader<InjectedMethods, BulmaTheme>
 
+// INFO: could ap here to avoid such currying but this chain is more meaningful
 export const theme: Reader<InjectedMethods, BulmaTheme> =
   reader
     .of<InjectedMethods, Partial<BulmaTheme>>({})
-    .chain(input => asks(methods => makeBasicTheme(methods)(input)))
+    .chain(input => 
+      asks(methods =>
+        makeBasicTheme(methods)(input))) 
 
 export const defaultTheme = theme.run(resolvers)
 
@@ -23,4 +26,5 @@ export const zLayers = {
   navbarFixed: defaultTheme.navbarFixedZ,
   navbar: defaultTheme.navbarZ,
 }
+
 export type ThemeOverriding = (theme: BulmaTheme) => BulmaTheme

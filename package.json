@@ -11,7 +11,8 @@
     "color": "^3.0.0",
     "decamelize": "^2.0.0",
     "bulma": "^0.7.2",
-    "find-node-modules": "^1.0.4"
+    "find-node-modules": "^1.0.4",
+    "fp-ts": "^1.12.0"
   },
   "keywords": [
     "bulma",
