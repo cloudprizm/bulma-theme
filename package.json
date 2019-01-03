@@ -12,6 +12,13 @@
     "decamelize": "^2.0.0",
     "find-node-modules": "^1.0.4"
   },
+  "keywords": [
+    "bulma",
+    "theme",
+    "sass",
+    "sass variables extraction",
+    "styled-components"
+  ],
   "devDependencies": {
     "@types/color": "^3.0.0",
     "@types/decamelize": "~1.2.0"

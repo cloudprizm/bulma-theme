@@ -1,22 +1,29 @@
 `@hungry/bulma-theme`
-Sass bulma variables converted to typesafe function. Extracted via `@hunry/sass-ts-theme-creator`.
+
+Full dump of `Bulma` variables to typesafe `typescript` function.
+Variables are extracted via [`@hunry/sass-ts-theme-creator`](https://github.com/hungry-consulting/sass-ts-theme-creator).
+
+### Real usage scenario
+* [@hungry/bulma-element](https://github.com/hungry-consulting/bulma-element)
+* [@hungry/bulma](https://github.com/hungry-consulting/bulma-styled-theme)
 
 ### Why
-I wanted to have typesafe `sass` variables to create easly some other component based upon defined variables.
-
+* to easily customize any sass framework without guessing all variables and relation between them
+* have a `mappable` theme, where you can treat any part of theme as separate computation to improve soundness of code
 
 ### How it works
-* it has two parts, for `runtime` and `build time`.
+* it has two parts, `runtime` and `build time`, runtime part is used for example for `styled-components` and evaluating final values, build time, is required to provide `sass` variables thru `sass-var-loader`
 
 ### What is required for:
 #### build part
+* you can use custom [`webpack-loader`](https://github.com/hungry-consulting/webpack-sass-theme-loader) to run the apply the `theme`
 in case of using `webpack` as a bundler:
 1) `@hungry/webpack-sass-theme-loader` or `sass-var-loader` (i.e. `@epegzz/sass-vars-loader`)
 2) `sass-loader` 
 
 #### runtime part
 
-### Overriding theme
+### Overriding `basic-theme`
 ```ts
 import { theme as bulmaTheme, color, ThemeOverriding } from '@hungry/bulma-theme'
 
