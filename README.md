@@ -1,6 +1,7 @@
 `@hungry/bulma-theme`
+===
 
-Full dump of `Bulma` variables to typesafe `typescript` function.
+All variables from [`bulma`](https://bulma.io/), exported as `typescript` function with customization and interpretation abilities.
 Variables are extracted via [`@hungry/sass-ts-theme-creator`](https://github.com/hungry-consulting/sass-ts-theme-creator).
 
 ### Real usage scenario
@@ -9,21 +10,18 @@ Variables are extracted via [`@hungry/sass-ts-theme-creator`](https://github.com
 
 ### Why
 * to easily customize any sass framework without guessing all variables and relation between them
-* have a `mappable` theme, where you can treat any part of theme as separate computation to improve soundness of code
+* have a `mappable` theme, where you can treat any part of theme as separate computation to improve soundness of code and modularity
 
 ### How it works
-* it has two parts, `runtime` and `build time`, runtime part is used for example for `styled-components` and evaluating final values, build time, is required to provide `sass` variables thru `sass-var-loader`
+* it has two parts, `runtime` and `build time`, runtime part is used for example for `styled-components` and evaluating final values, build time, is required to provide `sass` variables thru `sass-var-loader`. All you have to do is to define a theme - rest would happen in `auto-magic` manner.
 
 ### What is required for:
 #### build part
-* you can use custom [`webpack-loader`](https://github.com/hungry-consulting/webpack-sass-theme-loader) to run the apply the `theme`
-in case of using `webpack` as a bundler:
-1) `@hungry/webpack-sass-theme-loader` or `sass-var-loader` (i.e. `@epegzz/sass-vars-loader`)
-2) `sass-loader` 
+* use [`webpack-sass-theme-loader`](https://github.com/hungry-consulting/webpack-sass-theme-loader) to provide overriding to your `bulma theme`
 
-#### runtime part
+#### Defining a custom theme
 
-### Overriding `basic-theme`
+### Overriding
 ```ts
 import { theme as bulmaTheme, color, ThemeOverriding } from '@hungry/bulma-theme'
 
@@ -111,3 +109,7 @@ export const theme = bulmaTheme
   .map(overrideText)
   .map(overrideCore)
 ```
+
+### Attaching to `loader` 
+It is used in  build time to provide theme variables overriding.
+You have to pass exported function from your custom theme to `webpack-sass-theme-loader. More details [here](https://github.com/hungry-consulting/webpack-sass-theme-loader).
