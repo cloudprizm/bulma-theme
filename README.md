@@ -1,11 +1,11 @@
 `@hungry/bulma-theme`
 
 Full dump of `Bulma` variables to typesafe `typescript` function.
-Variables are extracted via [`@hunry/sass-ts-theme-creator`](https://github.com/hungry-consulting/sass-ts-theme-creator).
+Variables are extracted via [`@hungry/sass-ts-theme-creator`](https://github.com/hungry-consulting/sass-ts-theme-creator).
 
 ### Real usage scenario
 * [@hungry/bulma-element](https://github.com/hungry-consulting/bulma-element)
-* [@hungry/bulma](https://github.com/hungry-consulting/bulma-styled-theme)
+* [@hungry/bulma-styled-theme](https://github.com/hungry-consulting/bulma-styled-theme)
 
 ### Why
 * to easily customize any sass framework without guessing all variables and relation between them
