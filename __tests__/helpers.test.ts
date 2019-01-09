@@ -1,4 +1,4 @@
-import { evaluate } from './helpers'
+import { evaluate } from '../src/helpers'
 
 test('eval box shadow with colors', () => {
   const black = '#000'

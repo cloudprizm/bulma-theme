@@ -1,16 +1,25 @@
 {
   "name": "@hungry/bulma-theme",
   "version": "0.0.1",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "sideEffects": false,
   "scripts": {
-    "postinstall": "node src/generate-theme.js"
+    "postinstall": "node src/generate-theme.js",
+    "build:code": "babel src -d dist --extensions '.ts','.tsx'",
+    "prepublish": "yarn test && yarn build",
+    "test": "jest",
+    "build:declarations": "tsc --build tsconfig.json",
+    "build": "concurrently --names '@hungry/bulma-theme' 'yarn build:declarations' 'yarn build:code'",
+    "watch": "concurrently --names '@hungry/bulma-theme' 'yarn build:declarations --watch' 'yarn build:code --watch'",
+    "docs": "typedoc --out docs ./src/**",
+    "archetype:update": "spell new library-os"
   },
   "dependencies": {
+    "@hungry/babel-preset-cli": "^0.1.1",
     "@hungry/sass-ts-theme-creator": "~0.0.1",
+    "bulma": "^0.7.2",
     "color": "^3.0.0",
     "decamelize": "^2.0.0",
-    "bulma": "^0.7.2",
     "find-node-modules": "^1.0.4",
     "fp-ts": "^1.12.0"
   },
@@ -18,21 +27,59 @@
     "bulma",
     "theme",
     "sass",
-    "sass variables extraction",
+    "variables",
+    "extract",
     "styled-components"
   ],
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
     "@types/color": "^3.0.0",
-    "@types/decamelize": "~1.2.0"
+    "@types/decamelize": "~1.2.0",
+    "@types/jest": "^23.3.12",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "concurrently": "^4.1.0",
+    "jest": "^23.6.0",
+    "typedoc": "^0.14.0",
+    "typescript": "^3.2.2"
   },
   "peerDependencies": {
-    "styled-components": "^4.1.1",
-    "react": "^16.3.0"
+    "react": "^16.3.0",
+    "styled-components": "^4.1.1"
   },
-  "homepage": "https://github.com/damianbaar/catch-the-sun/tree/master/packages/component/bulma-theme",
+  "homepage": "https://github.com/hungry-consulting/hungry-consulting/bulma-theme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/damianbaar/catch-the-sun/tree/master/packages/component/bulma-theme"
+    "url": "https://github.com/hungry-consulting/hungry-consulting/bulma-theme"
   },
-  "private": false
+  "private": false,
+  "license": "MIT",
+  "babel": {
+    "presets": [
+      "@hungry/cli"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "typings": "dist/index.d.ts",
+  "bugs": {
+    "url": "https://github.com/hungry-consulting/hungry-consulting/bulma-theme/issues",
+    "email": "damian.baar@gmail.com"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "babel-jest"
+    },
+    "testRegex": "/__tests__/.*\\.test\\.tsx?$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
 }
