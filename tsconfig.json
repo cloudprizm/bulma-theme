@@ -31,9 +31,8 @@
     "node_modules"
   ],
   "typedocOptions": {
-    "mode": "file",
+    "mode": "modules",
     "out": "docs",
-    "theme": "minimal",
     "composite": true,
     "ignoreCompilerErrors": true,
     "excludePrivate": true,
@@ -43,7 +42,6 @@
     "preserveConstEnums": true,
     "stripInternal": true,
     "suppressExcessPropertyErrors": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "module": "commonjs"
+    "suppressImplicitAnyIndexErrors": true
   }
 }
