@@ -398,25 +398,25 @@ export type BulmaVars =
   | 'radiusRounded'
   | 'speed'
 export type BulmaTheme = Record<BulmaVars, string> & {
-  weightNormal: number;
+  weightNormal: number
 } & { bodyWeight: number } & { bodyLineHeight: number } & {
-  weightBold: number;
+  weightBold: number
 } & { strongWeight: number } & { breadcrumbItemPaddingVertical: number } & {
-  cardHeaderWeight: number;
+  cardHeaderWeight: number
 } & { dropdownContentZ: number } & { messageHeaderWeight: number } & {
-  messageHeaderBodyBorderWidth: number;
+  messageHeaderBodyBorderWidth: number
 } & { modalZ: number } & { modalCardTitleLineHeight: number } & {
-  navbarZ: number;
+  navbarZ: number
 } & { navbarFixedZ: number } & { navbarDropdownZ: number } & {
-  panelHeadingLineHeight: number;
+  panelHeadingLineHeight: number
 } & { weightLight: number } & { panelHeadingWeight: number } & {
-  buttonDisabledOpacity: number;
+  buttonDisabledOpacity: number
 } & { weightSemibold: number } & { contentHeadingWeight: number } & {
-  contentHeadingLineHeight: number;
+  contentHeadingLineHeight: number
 } & { labelWeight: number } & { dimensions: number[] } & {
-  titleWeight: number;
+  titleWeight: number
 } & { titleLineHeight: number } & { subtitleWeight: number } & {
-  subtitleLineHeight: number;
+  subtitleLineHeight: number
 } & { subtitleStrongWeight: number } & { controlLineHeight: number } & {
   colors: Record<
     | 'white'
@@ -438,7 +438,7 @@ export type BulmaTheme = Record<BulmaVars, string> & {
     | 'danger'
     | 'dangerInvert',
     string
-  >;
+  >
 } & {
   shades: Record<
     | 'blackBis'
@@ -451,9 +451,9 @@ export type BulmaTheme = Record<BulmaVars, string> & {
     | 'whiteTer'
     | 'whiteBis',
     string
-  >;
+  >
 } & { sizes: string[] } & { weightMedium: number } & {
-  widescreenEnabled: boolean;
+  widescreenEnabled: boolean
 } & { fullhdEnabled: boolean } & { variableColumns: boolean }
 
 export const makeBasicTheme = ({
@@ -653,8 +653,7 @@ export const makeBasicTheme = ({
   const grey = overriding.grey || color(`hsl(0, 0%, 48%)`)
   const textLight = overriding.textLight || grey
   const menuLabelColor = overriding.menuLabelColor || textLight
-  const messageBackgroundColor =
-    overriding.messageBackgroundColor || background
+  const messageBackgroundColor = overriding.messageBackgroundColor || background
   const messageRadius = overriding.messageRadius || radius
   const messageHeaderBackgroundColor =
     overriding.messageHeaderBackgroundColor || text
@@ -684,8 +683,7 @@ export const makeBasicTheme = ({
   const modalBackgroundBackgroundColor =
     overriding.modalBackgroundBackgroundColor || color(`rgba(${black}, 0.86)`)
   const modalContentWidth = overriding.modalContentWidth || '640px'
-  const modalContentMarginMobile =
-    overriding.modalContentMarginMobile || '20px'
+  const modalContentMarginMobile = overriding.modalContentMarginMobile || '20px'
   const modalContentSpacingMobile =
     overriding.modalContentSpacingMobile || '160px'
   const modalContentSpacingTablet =
@@ -819,8 +817,7 @@ export const makeBasicTheme = ({
     overriding.paginationDisabledBackgroundColor || greyLighter
   const paginationDisabledBorderColor =
     overriding.paginationDisabledBorderColor || greyLighter
-  const paginationCurrentColor =
-    overriding.paginationCurrentColor || linkInvert
+  const paginationCurrentColor = overriding.paginationCurrentColor || linkInvert
   const paginationCurrentBackgroundColor =
     overriding.paginationCurrentBackgroundColor || link
   const paginationCurrentBorderColor =
@@ -861,8 +858,7 @@ export const makeBasicTheme = ({
   const panelBlockActiveBorderLeftColor =
     overriding.panelBlockActiveBorderLeftColor || link
   const panelBlockActiveColor = overriding.panelBlockActiveColor || linkActive
-  const panelBlockActiveIconColor =
-    overriding.panelBlockActiveIconColor || link
+  const panelBlockActiveIconColor = overriding.panelBlockActiveIconColor || link
   const panelIconColor = overriding.panelIconColor || textLight
   const tabsBorderBottomColor = overriding.tabsBorderBottomColor || border
   const tabsBorderBottomStyle = overriding.tabsBorderBottomStyle || 'solid'
@@ -968,8 +964,7 @@ export const makeBasicTheme = ({
   const buttonBorderWidth = overriding.buttonBorderWidth || controlBorderWidth
   const buttonPaddingVertical =
     overriding.buttonPaddingVertical || `calc(0.375em - ${buttonBorderWidth})`
-  const buttonPaddingHorizontal =
-    overriding.buttonPaddingHorizontal || '0.75em'
+  const buttonPaddingHorizontal = overriding.buttonPaddingHorizontal || '0.75em'
   const buttonHoverColor = overriding.buttonHoverColor || linkHover
   const buttonHoverBorderColor =
     overriding.buttonHoverBorderColor || linkHoverBorder
@@ -1001,8 +996,7 @@ export const makeBasicTheme = ({
     overriding.buttonStaticBorderColor || greyLighter
   const contentHeadingColor = overriding.contentHeadingColor || textStrong
   const weightSemibold = overriding.weightSemibold || 600
-  const contentHeadingWeight =
-    overriding.contentHeadingWeight || weightSemibold
+  const contentHeadingWeight = overriding.contentHeadingWeight || weightSemibold
   const contentHeadingLineHeight = overriding.contentHeadingLineHeight || 1.125
   const contentBlockquoteBackgroundColor =
     overriding.contentBlockquoteBackgroundColor || background
@@ -1042,10 +1036,7 @@ export const makeBasicTheme = ({
   const inputHeight = overriding.inputHeight || controlHeight
   const inputShadow =
     overriding.inputShadow ||
-    evaluate(
-      [`inset`, `0`, `1px`, `2px`, `rgba(${black}, 0.1)`],
-      'inputShadow'
-    )
+    evaluate([`inset`, `0`, `1px`, `2px`, `rgba(${black}, 0.1)`], 'inputShadow')
   const inputHoverColor = overriding.inputHoverColor || greyDarker
   const inputHoverBorderColor = overriding.inputHoverBorderColor || greyLight
   const inputFocusColor = overriding.inputFocusColor || greyDarker
@@ -1149,8 +1140,7 @@ export const makeBasicTheme = ({
   const subtitleWeight = overriding.subtitleWeight || weightNormal
   const subtitleLineHeight = overriding.subtitleLineHeight || 1.25
   const subtitleStrongColor = overriding.subtitleStrongColor || greyDarker
-  const subtitleStrongWeight =
-    overriding.subtitleStrongWeight || weightSemibold
+  const subtitleStrongWeight = overriding.subtitleStrongWeight || weightSemibold
   const subtitleNegativeMargin =
     overriding.subtitleNegativeMargin ||
     evaluate([`-1.25rem`], 'subtitleNegativeMargin')
@@ -1168,8 +1158,7 @@ export const makeBasicTheme = ({
   const controlRadiusSmall = overriding.controlRadiusSmall || radiusSmall
   const controlLineHeight = overriding.controlLineHeight || 1.5
   const controlPaddingVertical =
-    overriding.controlPaddingVertical ||
-    `calc(0.375em - ${controlBorderWidth})`
+    overriding.controlPaddingVertical || `calc(0.375em - ${controlBorderWidth})`
   const controlPaddingHorizontal =
     overriding.controlPaddingHorizontal ||
     `calc(0.625em - ${controlBorderWidth})`

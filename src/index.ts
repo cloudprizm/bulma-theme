@@ -1,4 +1,4 @@
 
 export * from './runnable-theme'
 export * from './helpers'
-export * from './default.theme'
+export * from './__generated__/theme'

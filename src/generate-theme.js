@@ -14,4 +14,4 @@ const typescriptThemeFunction = parseFile({
   includePaths: findNodeModules({ cwd: __dirname }).map(withinSRC)
 })
 
-fs.writeFileSync(withinSRC('default.theme.ts'), typescriptThemeFunction)
+fs.writeFileSync(withinSRC('__generated__/theme.ts'), typescriptThemeFunction)

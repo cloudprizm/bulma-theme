@@ -1,5 +1,5 @@
 import { toColorString, evaluate, invertColor } from './helpers'
-import { makeBasicTheme, InjectedMethods, BulmaTheme } from './default.theme'
+import { makeBasicTheme, InjectedMethods, BulmaTheme } from './__generated__/theme'
 import { reader, asks, Reader } from 'fp-ts/lib/Reader'
 
 export const resolvers: InjectedMethods = {
