@@ -4,6 +4,8 @@
 All variables from [`bulma`](https://bulma.io/), exported as `typescript` function with customization and interpretation abilities.
 Variables are extracted via [`@hungry/sass-ts-theme-creator`](https://github.com/hungry-consulting/sass-ts-theme-creator).
 
+[Docs](https://hungry-consulting.github.io/bulma-theme/index.html)
+
 ### Real usage scenario
 * [@hungry/bulma-element](https://github.com/hungry-consulting/bulma-element)
 * [@hungry/bulma-styled-theme](https://github.com/hungry-consulting/bulma-styled-theme)
