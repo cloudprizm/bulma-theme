@@ -1,6 +1,6 @@
 {
   "name": "@hungry/bulma-theme",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "dist/index.js",
   "sideEffects": false,
   "scripts": {
@@ -15,7 +15,7 @@
     "archetype:update": "spell new library-os"
   },
   "dependencies": {
-    "@hungry/sass-ts-theme-creator": "^0.1.0",
+    "@hungry/sass-ts-theme-creator": "^0.1.1",
     "bulma": "^0.7.2",
     "color": "^3.0.0",
     "decamelize": "^2.0.0",
@@ -33,7 +33,7 @@
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
-    "@hungry/babel-preset-cli": "^0.1.2",
+    "@hungry/babel-preset-cli": "^0.1.3",
     "@types/color": "^3.0.0",
     "@types/decamelize": "~1.2.0",
     "@types/jest": "^23.3.12",
